@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.3.40"
+    kotlin("jvm")
 }
 
 group = "net.gridtech"
@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation(project("exchange"))
+    implementation(project(":exchange"))
     implementation(kotlin("stdlib-jdk8"))
 }
 
