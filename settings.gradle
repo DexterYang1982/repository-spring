@@ -1,0 +1,2 @@
+rootProject.name = 'repository-spring'
+includeFlat("exchange")
