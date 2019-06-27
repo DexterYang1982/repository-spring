@@ -13,6 +13,7 @@ repositories {
 
 dependencies {
     implementation(project(":exchange"))
+    implementation("org.springframework.data:spring-data-mongodb:2.1.9.RELEASE")
     implementation(kotlin("stdlib-jdk8"))
 }
 
