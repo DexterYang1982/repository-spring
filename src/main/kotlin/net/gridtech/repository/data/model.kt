@@ -141,7 +141,7 @@ data class Node(
                    alias: String,
                    description: String,
                    tags: List<String>,
-                   parent: Node?,
+                   parent: INode?,
                    externalScope: List<String>): Node {
             return Node(
                     id = id,
@@ -192,6 +192,15 @@ data class FieldValue(
                 value = fieldValue.value,
                 session = fieldValue.session,
                 updateTime = fieldValue.updateTime
+        )
+
+        fun empty() = FieldValue(
+                id = "",
+                nodeId = "",
+                fieldId = "",
+                value = "",
+                session = "",
+                updateTime = -1
         )
     }
 }
