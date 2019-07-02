@@ -14,6 +14,7 @@ repositories {
 dependencies {
     implementation(project(":exchange"))
     implementation("org.springframework.data:spring-data-mongodb:2.1.9.RELEASE")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.9")
     implementation(kotlin("stdlib-jdk8"))
 }
 
