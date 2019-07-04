@@ -119,7 +119,8 @@ data class Node(
         @Indexed
         override var nodeClassId: String,
         override var path: List<String>,
-        override var externalScope: List<String>,
+        override var externalNodeIdScope: List<String>,
+        override var externalNodeClassTagScope: List<String>,
         override var updateTime: Long
 ) : INode {
     companion object {
@@ -131,7 +132,8 @@ data class Node(
                 nodeClassId = node.nodeClassId,
                 tags = node.tags,
                 path = node.path,
-                externalScope = node.externalScope,
+                externalNodeIdScope = node.externalNodeIdScope,
+                externalNodeClassTagScope = node.externalNodeClassTagScope,
                 updateTime = node.updateTime
         )
 
@@ -142,7 +144,8 @@ data class Node(
                    description: String,
                    tags: List<String>,
                    parent: INode?,
-                   externalScope: List<String>): Node {
+                   externalNodeIdScope: List<String>,
+                   externalNodeClassTagScope: List<String>): Node {
             return Node(
                     id = id,
                     name = name,
@@ -151,7 +154,8 @@ data class Node(
                     tags = tags,
                     nodeClassId = nodeClass.id,
                     path = parent?.path?.toMutableList()?.apply { add(parent.id) } ?: emptyList(),
-                    externalScope = externalScope,
+                    externalNodeIdScope = externalNodeIdScope,
+                    externalNodeClassTagScope = externalNodeClassTagScope,
                     updateTime = currentTime()
             )
         }
@@ -165,7 +169,8 @@ data class Node(
                         nodeClassId = original.nodeClassId,
                         tags = original.tags,
                         path = original.path,
-                        externalScope = original.externalScope,
+                        externalNodeIdScope = original.externalNodeIdScope,
+                        externalNodeClassTagScope = original.externalNodeClassTagScope,
                         updateTime = original.updateTime
                 )
     }

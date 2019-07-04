@@ -27,6 +27,8 @@ class NodeClassDao : INodeClassDao {
     override fun delete(id: String) {
         repository.deleteById(id)
     }
+
+    override fun getByTags(tags: List<String>): List<INodeClass> =repository.findNodeClassesByTagsContains(tags)
 }
 
 

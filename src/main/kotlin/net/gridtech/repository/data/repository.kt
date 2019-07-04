@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface NodeClassRepository : MongoRepository<NodeClass, String> {
+    fun findNodeClassesByTagsContains(tags: List<String>): List<NodeClass>
 }
 
 @Repository
