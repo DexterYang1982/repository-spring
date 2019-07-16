@@ -51,7 +51,7 @@ data class NodeClass(
                         description = description,
                         connectable = original.connectable,
                         tags = original.tags,
-                        updateTime = original.updateTime
+                        updateTime = currentTime()
                 )
     }
 
@@ -102,7 +102,7 @@ data class Field(
                 nodeClassId = original.nodeClassId,
                 tags = original.tags,
                 through = original.through,
-                updateTime = original.updateTime
+                updateTime = currentTime()
         )
     }
 
@@ -171,7 +171,7 @@ data class Node(
                         path = original.path,
                         externalNodeIdScope = original.externalNodeIdScope,
                         externalNodeClassTagScope = original.externalNodeClassTagScope,
-                        updateTime = original.updateTime
+                        updateTime = currentTime()
                 )
     }
 }
